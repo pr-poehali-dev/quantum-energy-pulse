@@ -39,7 +39,11 @@ export function Header() {
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a href="/" className="flex items-center gap-2 group" onClick={scrollToTop}>
-          <span className="font-serif tracking-widest text-xl uppercase text-white">FORMA</span>
+          <img
+            src="https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/937fa195-056c-4234-a851-27babec27198.png"
+            alt="ФОРМА"
+            className="h-8 w-auto brightness-0 invert"
+          />
         </a>
 
         <ul className="hidden md:flex items-center gap-10 text-sm tracking-wide">

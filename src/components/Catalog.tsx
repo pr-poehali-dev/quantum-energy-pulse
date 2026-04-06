@@ -1,32 +1,23 @@
 import { useState } from "react"
 import Icon from "@/components/ui/icon"
+import type { CartItem } from "./CartDrawer"
 
 interface CatalogProps {
+  items: CartItem[]
   cart: number[]
   onToggleCart: (id: number) => void
 }
 
-const catalogItems = [
-  { id: 1, name: "Кресло-качалка Волна", category: "Кресла", price: 45000, image: "https://cdn.poehali.dev/files/864989a2-a36a-4421-82ad-7bc86017db3f.jpg", material: "Берёза, чёрная покраска" },
-  { id: 2, name: "Лаунж-кресло Спираль", category: "Кресла", price: 38000, image: "https://cdn.poehali.dev/files/29255f8c-3140-4b10-b9ff-8f68d3044328.jpg", material: "Фанера берёза, натуральный" },
-  { id: 3, name: "Кресло-качалка Белая", category: "Кресла", price: 42000, image: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/b2cc2bff-f014-4db3-96e6-975d1874d116.jpg", material: "Фанера, белая покраска" },
-  { id: 4, name: "Лаунж-кресло Натур", category: "Кресла", price: 35000, image: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/329cfef4-76b7-47ed-a919-63b526bec06f.jpg", material: "Берёза натуральная" },
-  { id: 5, name: "S-кресло Изгиб", category: "Кресла", price: 41000, image: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/e6f0ae7a-e812-4748-84b8-6dcb7fc2e353.jpg", material: "Берёза натуральная" },
-  { id: 6, name: "Кресло руководителя", category: "Кресла", price: 65000, image: "https://cdn.poehali.dev/files/06b26d33-421b-4009-8ab5-f306cdd3f91f.jpg", material: "Берёза + чёрная кожа" },
-  { id: 7, name: "Журнальный стол Акула", category: "Столы", price: 78000, image: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/93572380-500f-4fe3-832d-60734b471a26.jpg", material: "Берёза + стекло" },
-  { id: 8, name: "Панно Орнамент", category: "Декор", price: 25000, image: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/bc30c011-3e69-4ee4-8162-b3480708cef6.jpg", material: "Фанера, лазерная резка" },
-]
-
 const categories = ["Все", "Кресла", "Столы", "Декор"]
 
 function formatPrice(price: number): string {
-  return price.toLocaleString("ru-RU").replace(/,/g, " ") + " ₽"
+  return price.toLocaleString("ru-RU") + " ₽"
 }
 
-export function Catalog({ cart, onToggleCart }: CatalogProps) {
+export function Catalog({ items, cart, onToggleCart }: CatalogProps) {
   const [activeCategory, setActiveCategory] = useState("Все")
 
-  const filtered = activeCategory === "Все" ? catalogItems : catalogItems.filter((i) => i.category === activeCategory)
+  const filtered = activeCategory === "Все" ? items : items.filter((i) => i.category === activeCategory)
 
   return (
     <section id="catalog" className="py-20 md:py-28 bg-stone-50">
@@ -36,21 +27,9 @@ export function Catalog({ cart, onToggleCart }: CatalogProps) {
             <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">Наши работы</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight">Каталог</h2>
           </div>
-
-          {cart.length > 0 && (
-            <div className="flex items-center gap-4 bg-white border border-stone-200 rounded-lg px-5 py-3 shadow-sm">
-              <div className="flex items-center gap-2 text-sm text-stone-700">
-                <Icon name="ShoppingBag" size={16} />
-                <span>Корзина: <strong>{cart.length}</strong> {cart.length === 1 ? "товар" : cart.length < 5 ? "товара" : "товаров"}</span>
-              </div>
-              <a
-                href="#contact"
-                className="text-sm font-medium bg-stone-900 text-white px-4 py-2 rounded hover:bg-stone-700 transition-colors"
-              >
-                Оформить заявку
-              </a>
-            </div>
-          )}
+          <p className="text-sm text-stone-500 max-w-xs text-right hidden md:block">
+            Добавляйте в корзину — она появится справа внизу
+          </p>
         </div>
 
         <div className="flex gap-2 flex-wrap mb-10">

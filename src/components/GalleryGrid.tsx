@@ -8,11 +8,15 @@ const images = [
   { src: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/b2cc2bff-f014-4db3-96e6-975d1874d116.jpg", alt: "Кресло-качалка белая" },
   { src: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/329cfef4-76b7-47ed-a919-63b526bec06f.jpg", alt: "Лаунж-кресло натуральный" },
   { src: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/e6f0ae7a-e812-4748-84b8-6dcb7fc2e353.jpg", alt: "S-кресло изгиб натуральный" },
+  { src: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/0ac0aaa4-cf7b-4727-a906-fa263f03972f.jpg", alt: "Кресло-качалка классика чёрное" },
+  { src: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/4244c604-4853-4b00-ac4d-36dbe9c69648.jpg", alt: "Кресло-качалка с дугой и шнуром" },
+  { src: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/58f17fb8-5608-481b-af12-2f53e5ebff47.jpg", alt: "Рабочий стол Z-форма белый" },
+  { src: "https://cdn.poehali.dev/projects/7a50b8f3-38c8-4f9f-b15f-add5ff3c56f5/bucket/bd1ca32e-af04-416b-abee-591033c14311.jpg", alt: "Деревянная скамья рейки" },
 ]
 
 export function GalleryGrid() {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section id="projects" className="py-20 md:py-28 bg-white">
       <div className="container mx-auto px-6 md:px-12">
         <div className="mb-14">
           <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">Портфолио</p>

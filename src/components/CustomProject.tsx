@@ -22,7 +22,7 @@ export function CustomProject() {
           alt="Деревянное панно фон"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/72" />
+        <div className="absolute inset-0 bg-black/85" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
