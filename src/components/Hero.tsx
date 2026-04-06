@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { ArrowDown } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 export function Hero() {
   const contentRef = useRef<HTMLDivElement>(null)
@@ -120,10 +120,11 @@ export function Hero() {
     <section id="hero" ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hously-background.png"
-          alt="Минималистичный архитектурный интерьер"
+          src="https://cdn.poehali.dev/files/06b26d33-421b-4009-8ab5-f306cdd3f91f.jpg"
+          alt="Параметрическое кресло РОДМА — дерево и кожа"
           className="w-full h-full object-cover object-center"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
       </div>
 
       <div
@@ -137,30 +138,24 @@ export function Hero() {
         }}
       >
         <div className="mb-72 md:mb-60 lg:mb-80">
-          <p className="text-sm tracking-[0.3em] uppercase text-center text-secondary mb-0">{"Архитектурная студия"}</p>
+          <p className="text-sm tracking-[0.3em] uppercase text-center text-secondary mb-4">{"Мастерская параметрической мебели"}</p>
 
           <h1
             ref={titleRef}
             className="text-7xl font-medium text-balance text-center text-white mb-0 tracking-tight leading-[0.9] lg:text-8xl"
           >
-            {"Создаем пространства"}
+            {"Мебель, рождённая"}
             <br />
-            <span className="text-orange-200">{"для жизни"}</span>
+            <span className="text-amber-200">{"из дерева"}</span>
           </h1>
         </div>
       </div>
 
-      <div className="absolute inset-0 z-20 pointer-events-none">
-        <img
-          src="/images/hously-foreground.png"
-          alt="Мраморная кухонная столешница"
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
+      <div className="absolute inset-0 z-20 pointer-events-none" />
 
       {animationComplete && (
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce z-30">
-          <ArrowDown className="w-5 h-5 text-muted-foreground" />
+          <Icon name="ArrowDown" size={20} className="text-white/70" />
         </div>
       )}
     </section>

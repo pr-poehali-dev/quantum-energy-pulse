@@ -1,38 +1,38 @@
 import { useState, useEffect, useRef } from "react"
-import { ArrowUpRight } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 const projects = [
   {
     id: 1,
-    title: "Резиденция Светлая",
-    category: "Жилой дом",
-    location: "Москва, Россия",
+    title: "Кресло-качалка Волна",
+    category: "Параметрическое кресло",
+    location: "Берёза, чёрная покраска",
     year: "2024",
-    image: "/images/hously-1.png",
+    image: "https://cdn.poehali.dev/files/864989a2-a36a-4421-82ad-7bc86017db3f.jpg",
   },
   {
     id: 2,
-    title: "Павильон Стекло",
-    category: "Коммерческий объект",
-    location: "Санкт-Петербург, Россия",
-    year: "2023",
-    image: "/images/hously-2.png",
+    title: "Лаунж-кресло Спираль",
+    category: "Дизайнерское кресло",
+    location: "Фанера берёза, натуральный",
+    year: "2024",
+    image: "https://cdn.poehali.dev/files/29255f8c-3140-4b10-b9ff-8f68d3044328.jpg",
   },
   {
     id: 3,
-    title: "Дом у моря",
-    category: "Жилой дом",
-    location: "Сочи, Россия",
+    title: "Обеденный стул Рёбра",
+    category: "Стул",
+    location: "Фанера, чёрная покраска",
     year: "2023",
-    image: "/images/hously-3.png",
+    image: "https://cdn.poehali.dev/files/ef654d05-5ae9-41e8-aa92-fdbf266e2afa.jpg",
   },
   {
     id: 4,
-    title: "Северный приют",
-    category: "Гостиничный комплекс",
-    location: "Казань, Россия",
+    title: "Кресло руководителя",
+    category: "Офисное кресло",
+    location: "Берёза + чёрная кожа",
     year: "2024",
-    image: "/images/hously-4.png",
+    image: "https://cdn.poehali.dev/files/06b26d33-421b-4009-8ab5-f306cdd3f91f.jpg",
   },
 ]
 
@@ -68,15 +68,15 @@ export function Projects() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div>
-            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Избранные работы</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight">Наши проекты</h2>
+            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Коллекция РОДМА</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight">Наши изделия</h2>
           </div>
           <a
-            href="#"
+            href="#contact"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
           >
-            Смотреть все проекты
-            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            Заказать изделие
+            <Icon name="ArrowUpRight" size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
 
