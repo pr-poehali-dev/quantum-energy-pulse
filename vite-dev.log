@@ -49,3 +49,6 @@
 8:00:21 AM [vite] (client) hmr update /src/pages/Index.tsx, /src/index.css
 8:00:43 AM [vite] (client) hmr update /src/index.css, /src/components/Catalog.tsx
 8:01:17 AM [vite] (client) hmr update /src/index.css, /src/components/GalleryGrid.tsx
+8:01:59 AM [vite] (client) page reload builds/d33b95b455b2ab4e8a6deb2a60464cc10ead3314/0cb99/index.html
+8:01:59 AM [vite] (client) page reload builds/d33b95b455b2ab4e8a6deb2a60464cc10ead3314/0cb99/index.html
+8:03:10 AM [vite] (client) page reload index.html
