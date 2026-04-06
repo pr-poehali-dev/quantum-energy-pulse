@@ -1,6 +1,14 @@
 import { useState, useEffect, MouseEvent } from "react"
 import { cn } from "../lib/utils"
 
+const navLinks = [
+  { label: "Главная", href: "#hero" },
+  { label: "Каталог", href: "#catalog" },
+  { label: "О нас", href: "#about" },
+  { label: "Проекты", href: "#projects" },
+  { label: "Вопросы", href: "#faq" },
+]
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -9,13 +17,11 @@ export function Header() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
     }
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false)
-  }
+  const closeMobileMenu = () => setMobileMenuOpen(false)
 
   const scrollToTop = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
@@ -27,27 +33,21 @@ export function Header() {
       className={cn(
         "fixed z-50 transition-all duration-500 my-0 py-0 rounded-none",
         scrolled || mobileMenuOpen
-          ? "bg-primary backdrop-blur-md py-4 top-4 left-4 right-4 rounded-2xl"
+          ? "bg-stone-900/95 backdrop-blur-md py-4 top-4 left-4 right-4 rounded-2xl"
           : "bg-transparent py-4 top-0 left-0 right-0",
       )}
     >
-      <nav className="container mx-auto px-6 flex items-center justify-between md:px-[24]">
+      <nav className="container mx-auto px-6 flex items-center justify-between">
         <a href="/" className="flex items-center gap-2 group" onClick={scrollToTop}>
-          <span className="text-white font-semibold text-xl tracking-widest uppercase">РОДМА</span>
+          <span className="font-serif tracking-widest text-xl uppercase text-white">FORMA</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-10 text-sm tracking-wide">
-          {[
-            { label: "Главная", href: "#hero" },
-            { label: "О нас", href: "#about" },
-            { label: "Коллекция", href: "#projects" },
-            { label: "Материалы", href: "#services" },
-            { label: "Вопросы", href: "#faq" },
-          ].map((item) => (
+          {navLinks.map((item) => (
             <li key={item.label}>
               <a
                 href={item.href}
-                className="hover:text-amber-300 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-amber-300 after:transition-all after:duration-300 text-white"
+                className="text-white hover:text-amber-300 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-amber-300 after:transition-all after:duration-300"
               >
                 {item.label}
               </a>
@@ -57,12 +57,7 @@ export function Header() {
 
         <a
           href="#contact"
-          className={cn(
-            "hidden md:inline-flex items-center gap-2 text-sm px-5 py-2.5 transition-all duration-300",
-            scrolled
-              ? "bg-white text-foreground border border-foreground/20 hover:bg-foreground hover:text-white"
-              : "bg-white text-foreground border border-foreground/20 hover:bg-foreground hover:text-white",
-          )}
+          className="hidden md:inline-flex items-center gap-2 text-sm px-5 py-2.5 bg-white text-stone-900 border border-white/20 hover:bg-amber-400 hover:border-amber-400 transition-all duration-300 font-medium"
         >
           Связаться
         </a>
@@ -94,17 +89,11 @@ export function Header() {
       >
         <div className="container mx-auto px-6">
           <ul className="flex flex-col gap-6 mb-8">
-            {[
-              { label: "Главная", href: "#hero" },
-              { label: "О нас", href: "#about" },
-              { label: "Коллекция", href: "#projects" },
-              { label: "Материалы", href: "#services" },
-              { label: "Вопросы", href: "#faq" },
-            ].map((item) => (
+            {navLinks.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="hover:text-amber-300 transition-colors duration-300 text-white text-4xl font-light block"
+                  className="text-white hover:text-amber-300 transition-colors duration-300 text-3xl font-light block"
                   onClick={closeMobileMenu}
                 >
                   {item.label}
@@ -112,10 +101,9 @@ export function Header() {
               </li>
             ))}
           </ul>
-
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 text-sm px-5 py-2.5 bg-white text-foreground border border-foreground/20 hover:bg-foreground hover:text-white transition-all duration-300 mb-4"
+            className="inline-flex items-center justify-center gap-2 text-sm px-5 py-2.5 bg-white text-stone-900 hover:bg-amber-400 transition-all duration-300 mb-4 font-medium"
             onClick={closeMobileMenu}
           >
             Связаться

@@ -36,3 +36,9 @@
 7:36:25 AM [vite] (client) hmr update /src/index.css
 7:36:25 AM [vite] (client) hmr update /src/index.css
 7:36:43 AM [vite] (client) page reload index.html
+7:36:52 AM [vite] (client) page reload builds/209665dc56a9283d47200f5e1350a535b5408762/9633d/index.html
+7:36:52 AM [vite] (client) page reload builds/209665dc56a9283d47200f5e1350a535b5408762/9633d/index.html
+7:42:57 AM [vite] (client) hmr update /src/components/Hero.tsx, /src/index.css
+7:45:34 AM [vite] (client) hmr update /src/components/Header.tsx, /src/index.css
+7:45:49 AM [vite] (client) hmr update /src/components/Footer.tsx, /src/index.css
+7:45:56 AM [vite] (client) hmr update /src/pages/Index.tsx, /src/index.css

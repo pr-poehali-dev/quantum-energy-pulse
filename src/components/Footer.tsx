@@ -1,75 +1,70 @@
 export function Footer() {
   return (
-    <footer className="py-16 md:py-24 border-t border-border">
+    <footer className="bg-stone-900 text-white py-16 md:py-20">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-4 gap-12 mb-14">
           <div className="md:col-span-2">
-            <a href="/" className="inline-block mb-6">
-              <span className="font-semibold text-2xl tracking-widest uppercase">РОДМА</span>
+            <a href="/" className="inline-block mb-5">
+              <span className="font-serif tracking-widest text-2xl uppercase text-white">FORMA</span>
             </a>
-            <p className="text-muted-foreground leading-relaxed max-w-sm">
-              Мастерская параметрической мебели и декора из натурального дерева. Енакиево, ДНР. Отправляем по всей России и СНГ.
+            <p className="text-stone-400 leading-relaxed max-w-sm text-sm">
+              Мастерская параметрической мебели и декора из натурального дерева. Каждое изделие создаётся вручную под индивидуальный заказ. Енакиево, ДНР.
             </p>
+            <div className="flex gap-3 mt-6">
+              {["Карта", "Счёт", "Договор"].map((method) => (
+                <span key={method} className="text-xs bg-stone-800 text-stone-300 border border-stone-700 rounded px-3 py-1.5">
+                  {method}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div>
-            <h4 className="text-sm font-medium mb-4">Мастерская</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
+            <h4 className="text-sm font-semibold mb-5 uppercase tracking-widest text-stone-300">Навигация</h4>
+            <ul className="space-y-3 text-sm text-stone-400">
               <li>
-                <a href="#projects" className="hover:text-foreground transition-colors">
-                  Коллекция
-                </a>
+                <a href="#catalog" className="hover:text-white transition-colors">Каталог</a>
               </li>
               <li>
-                <a href="#about" className="hover:text-foreground transition-colors">
-                  О нас
-                </a>
+                <a href="#about" className="hover:text-white transition-colors">О нас</a>
               </li>
               <li>
-                <a href="#services" className="hover:text-foreground transition-colors">
-                  Материалы
-                </a>
+                <a href="#how" className="hover:text-white transition-colors">Как работаем</a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-foreground transition-colors">
-                  Контакты
-                </a>
+                <a href="#contact" className="hover:text-white transition-colors">Контакты</a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-medium mb-4">Связь</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
+            <h4 className="text-sm font-semibold mb-5 uppercase tracking-widest text-stone-300">Контакты</h4>
+            <ul className="space-y-3 text-sm text-stone-400">
               <li>
-                <a href="https://t.me/rodma_mebel" className="hover:text-foreground transition-colors">
-                  Telegram
+                <a href="tel:+79518466204" className="hover:text-white transition-colors">
+                  +7 951 846 62 04
                 </a>
               </li>
               <li>
-                <a href="tel:+79001234567" className="hover:text-foreground transition-colors">
-                  +7 (900) 123-45-67
+                <a href="https://t.me/djgorbunov" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  @djgorbunov (Telegram)
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  ВКонтакте
-                </a>
+                <span className="text-stone-500">Енакиево, ДНР</span>
               </li>
               <li>
-                <span className="text-muted-foreground/60">Енакиево, ДНР</span>
+                <span className="text-stone-500">Отправляем по России и СНГ</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row md:items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© 2026 РОДМА. Все права защищены.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-foreground transition-colors">
-              Политика конфиденциальности
-            </a>
-          </div>
+        <div className="pt-8 border-t border-stone-800 flex flex-col md:flex-row md:items-center justify-between gap-4 text-sm text-stone-500">
+          <p>© 2026 FORMA. Все права защищены.</p>
+          <a href="#" className="hover:text-stone-300 transition-colors">
+            Политика конфиденциальности
+          </a>
         </div>
       </div>
     </footer>
